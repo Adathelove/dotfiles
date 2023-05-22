@@ -47,3 +47,6 @@ else
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+alias adas_pull="cd ~/dotfiles && git pull && cd ~/adaslove && git pull && cd ~/NeptunesCloud/ && git pull"
