@@ -1,2 +1,3 @@
 export PATH="${PATH}:~/bin/"
-source ~/bin/bin_paths_specifics.sh
+SPECIFICS=~/bin/bin_paths_specifics.sh
+[ -r $SPECIFICS ] && source $SPECIFICS
