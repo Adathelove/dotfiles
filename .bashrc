@@ -1,5 +1,11 @@
 BASHRC="~/.bashrc"
 
+export PS1="\[$(tput setaf 226)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 214)\]\h \[$(tput setaf 33)\]\w \[$(tput sgr0)\]$ "
+
+source ~/bin/util.sh
+
+alias hw="history -w"
+alias hg="history | grep"
 
 alias vi=vim
 
@@ -21,7 +27,6 @@ alias vimpart="vi ~/.vimrc_parts"
 
 alias sshcd="cd ~/.ssh/"
 alias sshkeys="ssh-add -L"
-
 
 SSH_ENV="$HOME/.ssh/agent-environment"
 
@@ -50,3 +55,14 @@ fi
 
 
 alias adas_pull="cd ~/dotfiles && git pull && cd ~/adaslove && git pull && cd ~/NeptunesCloud/ && git pull"
+
+
+BASHRC_HOST_SPECIFICS="$HOME/.bashrc.$(hostname -s)"
+alias bashedithostspecifics="vi $BASHRC_HOST_SPECIFICS"
+if [ -r "${BASHRC_HOST_SPECIFICS}" ] ; then
+    info "source /"${BASHRC_HOST_SPECIFICS}/""
+    source "${BASHRC_HOST_SPECIFICS}"
+else
+    warn "can NOT source "${BASHRC_HOST_SPECIFICS}/""
+    indent "$(ls -l ${BASHRC_HOST_SPECIFICS})"
+fi
