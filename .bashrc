@@ -28,6 +28,14 @@ alias vimpart="vi ~/.vimrc_parts"
 alias sshcd="cd ~/.ssh/"
 alias sshkeys="ssh-add -L"
 
+alias gd="git diff"
+alias gl="git log"
+alias ga="git add"
+alias gc="git commit"
+alias gca="git commit -a"
+alias gp="git push"
+alias gu="git pull"
+
 SSH_ENV="$HOME/.ssh/agent-environment"
 
 function start_agent {
